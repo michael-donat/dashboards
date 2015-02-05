@@ -6,4 +6,4 @@ Installation
 Run dashing
 =======
 
-    dashing start -R dashing/config.ru -d
+    cd dashing && dashing start -d
