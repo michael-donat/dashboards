@@ -1,7 +1,7 @@
 Installation
 =====
 
-```gem install```
+```bundle```
 
 Run dashing
 =======
