@@ -1,0 +1,66 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$state-color:                 #fff;
+$background-color:            #4b4b4b;
+$background-failed-color:     #d26771;
+$background-successful-color: #96bf48;
+$background-unknown-color:    #999;
+
+$title-color:       rgba(255, 255, 255, 1);
+$label-color:       rgba(255, 255, 255, 0.7);
+$duration-color:    rgba(255, 255, 255, 0.7);
+$finished-color:    rgba(0, 0, 0, 0.3);
+
+.widget-bamboo-build {
+
+  background: url("/dashing/assets/bamboo-logo.png") no-repeat center;
+  background-size: contain;
+  vertical-align: top;
+  padding: 15px 12px !important;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .title {
+    color: $title-color;
+  }
+
+  .state {
+    text-align: center;
+    display: block;
+    font-weight: 600;
+    color: $state-color;
+    font-size: 40px;
+    word-wrap: break-word;
+  }
+
+  .finished {
+    color: $finished-color;
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+  }
+
+  .duration {
+    color: $duration-color;
+    position: absolute;
+    bottom: 48px;
+    left: 0;
+    right: 0;
+  }
+
+  &.failed {
+    background-color: $background-failed-color;
+  }
+
+  &.unknown {
+    background-color: $background-unknown-color;
+  }
+
+  &.successful {
+    background-color: $background-successful-color;
+  }
+}
