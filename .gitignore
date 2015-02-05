@@ -2,3 +2,5 @@
 history.yml
 dashing.conf.yml
 dashing/log
+log
+tmp

@@ -1,7 +1,7 @@
 require 'octokit'
 require 'yaml'
 
-cnf = YAML::load_file(File.join(__dir__, '../', 'config.yml'))['github']
+cnf = YAML::load_file(File.join(__dir__, '../../', 'dashing.conf.yml'))['github']
 
 SCHEDULER.every '1m', :first_in => 0 do |job|
   client = Octokit::Client.new(:access_token => cnf['token'])

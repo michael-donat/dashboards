@@ -2,7 +2,7 @@ require 'net/https'
 require 'json'
 require 'yaml'
 
-cnf = YAML::load_file(File.join(__dir__, '../', 'config.yml'))['bamboo']
+cnf = YAML::load_file(File.join(__dir__, '../../', 'dashing.conf.yml'))['bamboo']
 
 #--------------------------------------------------------------------------------
 # Configuration
