@@ -1,0 +1,11 @@
+bamboo:
+  user: ~
+  password: ~
+  url: ~
+  plans: 
+
+github:
+  token: ~
+  organisation: ~
+  prs:
+    repos: ~
