@@ -42,6 +42,16 @@ class BambooBuild
       response_json = JSON.parse(response.body)
       latest_build = response_json['results']['result'][0]
 
+      request = Net::HTTP::Get.new(status_endpoint(plan_key))
+      if @credentials && @credentials[:username].length > 0
+        request.basic_auth @credentials[:username], @credentials[:password]
+      end
+
+      response = http.request(request)
+      response_json = JSON.parse(response.body)
+
+      latest_build['building'] = response_json['isBuilding']
+
       resKey = latest_build['buildResultKey']
       resLink = "https://monitechnologies.atlassian.net/builds/browse/#{resKey}"
 
@@ -51,7 +61,8 @@ class BambooBuild
         :duration => latest_build['buildDurationDescription'],
         :finished => latest_build['buildRelativeTime'],
         :link => resLink,
-        :target => latest_build['plan']['planKey']['key']    
+        :target => latest_build['plan']['planKey']['key'],
+        :building => latest_build['building'],
       }
 
     rescue => e
@@ -71,15 +82,23 @@ class BambooBuild
   def rest_endpoint
     '/builds/rest/api/latest'
   end
+
+  def status_endpoint(plan_key)
+    auth_param = ''
+    if @credentials && @credentials[:username].length > 0
+      auth_param = 'os_authType=basic&'
+    end
+    "#{rest_endpoint}/plan/#{plan_key}.json?#{auth_param}expand=stages&max-results=1"
+  end
   
   def result_endpoint(plan_key)
     auth_param = ''
     if @credentials && @credentials[:username].length > 0
       auth_param = 'os_authType=basic&'
     end
-
     "#{rest_endpoint}/result/#{plan_key}.json?#{auth_param}expand=results.result&max-results=1"
   end
+
 end
 
 def get_plan_status(bamboo_uri, credentials, job)

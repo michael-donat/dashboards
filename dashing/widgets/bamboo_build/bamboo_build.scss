@@ -12,7 +12,27 @@ $label-color:       rgba(255, 255, 255, 0.7);
 $duration-color:    rgba(255, 255, 255, 0.7);
 $finished-color:    rgba(0, 0, 0, 0.3);
 
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+  0% {background: $background-failed-color}
+  50% {background: $background-successful-color;}
+  100% {background: $background-failed-color}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+  0% {background: $background-failed-color}
+  50% {background: $background-successful-color;}
+  100% {background: $background-failed-color}
+}
+
 .widget-bamboo-build {
+
+  &.building {
+    -webkit-animation:myfirst 5s linear infinite alternate;
+    -moz-animation:myfirst 5s linear infinite alternate;
+    animation:myfirst 5s linear infinite alternate;
+  }
 
   background: url("/dashing/assets/bamboo-logo.png") no-repeat center;
   background-size: contain;

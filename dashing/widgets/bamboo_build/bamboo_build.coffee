@@ -6,11 +6,16 @@ class Dashing.BambooBuild extends Dashing.Widget
 
   refreshWidgetState: =>
     node = $(@node)
-    node.removeClass('successful failed unknown')
-    node.addClass(@get('state').toLowerCase())
+    node.removeClass('successful failed unknown building')
+
     link = $(@node).find("a")
     link.attr('href', @get('link'))
     link.attr('target', @get('target'))
+
+    if @get('building')
+      node.addClass('building')
+    else
+      node.addClass(@get('state').toLowerCase())
 
   ready: ->
     @refreshWidgetState()
