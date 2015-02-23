@@ -3,17 +3,17 @@
     $(function() {
         // These settings override the defaults set in application.coffee. You can do this on a per dashboard basis.
         Dashing.widget_base_dimensions = [60, 60]
-        Dashing.numColumns = 15
-        Dashing.gridsterLayout('[{"col":10,"row":1,"size_x":6,"size_y":8},{"col":1,"row":1,"size_x":1,"size_y":2},{"col":2,"row":1,"size_x":4,"size_y":2},{"col":6,"row":1,"size_x":4,"size_y":2},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":6,"row":3,"size_x":4,"size_y":2},{"col":2,"row":3,"size_x":4,"size_y":2},{"col":1,"row":5,"size_x":1,"size_y":2},{"col":2,"row":5,"size_x":4,"size_y":2},{"col":2,"row":7,"size_x":4,"size_y":2},{"col":6,"row":7,"size_x":4,"size_y":2},{"col":6,"row":5,"size_x":4,"size_y":2}]')
+        Dashing.numColumns = 9
+        //Dashing.gridsterLayout('[{"col":10,"row":1,"size_x":6,"size_y":8},{"col":1,"row":1,"size_x":1,"size_y":2},{"col":2,"row":1,"size_x":4,"size_y":2},{"col":6,"row":1,"size_x":4,"size_y":2},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":6,"row":3,"size_x":4,"size_y":2},{"col":2,"row":3,"size_x":4,"size_y":2},{"col":1,"row":5,"size_x":1,"size_y":2},{"col":2,"row":5,"size_x":4,"size_y":2},{"col":2,"row":7,"size_x":4,"size_y":2},{"col":6,"row":7,"size_x":4,"size_y":2},{"col":6,"row":5,"size_x":4,"size_y":2}]')
+        //Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":2},{"col":2,"row":1,"size_x":4,"size_y":2},{"col":6,"row":1,"size_x":4,"size_y":2},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":2,"row":7,"size_x":4,"size_y":2},{"col":2,"row":3,"size_x":4,"size_y":2},{"col":1,"row":5,"size_x":1,"size_y":2},{"col":2,"row":5,"size_x":4,"size_y":2},{"col":6,"row":5,"size_x":4,"size_y":2},{"col":6,"row":7,"size_x":4,"size_y":2},{"col":6,"row":3,"size_x":4,"size_y":2},{"col":1,"row":9,"size_x":7,"size_y":8}]');
+        //Dashing.gridsterLayout('[{"col":2,"row":9,"size_x":6,"size_y":8},{"col":1,"row":1,"size_x":1,"size_y":2},{"col":2,"row":1,"size_x":4,"size_y":2},{"col":6,"row":1,"size_x":4,"size_y":2},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":6,"row":3,"size_x":4,"size_y":2},{"col":2,"row":3,"size_x":4,"size_y":2},{"col":1,"row":5,"size_x":1,"size_y":2},{"col":6,"row":5,"size_x":4,"size_y":2},{"col":6,"row":7,"size_x":4,"size_y":2},{"col":2,"row":7,"size_x":4,"size_y":2},{"col":2,"row":5,"size_x":4,"size_y":2}]');
+        Dashing.gridsterLayout('[{"col":1,"row":1,"size_x":1,"size_y":2},{"col":2,"row":5,"size_x":4,"size_y":2},{"col":6,"row":1,"size_x":4,"size_y":2},{"col":1,"row":3,"size_x":1,"size_y":2},{"col":6,"row":7,"size_x":4,"size_y":2},{"col":2,"row":3,"size_x":4,"size_y":2},{"col":1,"row":5,"size_x":1,"size_y":2},{"col":2,"row":7,"size_x":4,"size_y":2},{"col":6,"row":3,"size_x":4,"size_y":2},{"col":6,"row":5,"size_x":4,"size_y":2},{"col":2,"row":1,"size_x":4,"size_y":2},{"col":2,"row":9,"size_x":8,"size_y":10}]');
     });
 </script>
+
+
 <div class="gridster">
   <ul>
-
-
-<li data-row="11" data-col="1" data-sizex="6" data-sizey="8">
-  <div data-view="PullRequests" data-id="pulls"></div>
-</li>
 
   	<li data-row="5" data-col="1" data-sizex="1" data-sizey="2" class="gs_w divider-holder">
   		<div class="divider-title">
@@ -53,7 +53,9 @@
       <div data-id="MSDK-MHS" data-view="BambooBuild" data-title="HomeSend"></div>
   	</li>
 
-  	
+    <li data-row="11" data-col="2" data-sizex="8" data-sizey="10">
+        <div data-view="PullRequests" data-id="pulls"></div>
+    </li>
 
   </ul>
 </div>
